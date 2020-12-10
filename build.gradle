@@ -1,0 +1,28 @@
+
+description = 'com.ibm.watsonx.framework.remoting'
+
+apply plugin: "java"
+
+project.ext {
+    akkaVersion = "2.5.18"
+    scalaVersion = "2.12"
+}
+
+repositories {
+    mavenCentral()
+}
+dependencies {
+	compile "com.google.guava:guava:18.0"
+    compile "org.apache.commons:commons-lang3:3.4"
+    compile "com.typesafe.akka:akka-testkit_$scalaVersion:$akkaVersion"
+	compile "com.typesafe.akka:akka-remote_$scalaVersion:$akkaVersion"
+    compile "com.typesafe.akka:akka-cluster_$scalaVersion:$akkaVersion"
+    compile "com.typesafe.akka:akka-cluster-tools_$scalaVersion:$akkaVersion"
+    compile "com.typesafe.akka:akka-contrib_$scalaVersion:$akkaVersion"
+    testImplementation 'junit:junit:4.13'
+}
+
+test {
+   useJUnit()
+   jvmArgs '-Djava.util.logging.config.file=../com.ibm.watsonx.nlp_di.system/src/main/resources/Logger.properties'
+}

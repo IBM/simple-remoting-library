@@ -1,2 +1,2 @@
 # simple-remoting-library
-Source code accompanying a tutorial in IBM Developer
+A simple remoting library to convert legacy Java APIs into remote services with no extra coding 
